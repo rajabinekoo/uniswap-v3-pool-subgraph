@@ -3,12 +3,13 @@ type Burn @entity(immutable: true) {
   owner: Bytes! # address
   tickLower: Int! # int24
   tickUpper: Int! # int24
-  amount: BigInt! # uint128
+  liquidity: BigInt! # uint128
   amount0: BigInt! # uint256
   amount1: BigInt! # uint256
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
+  logIndex: BigInt!
 }
 
 type Collect @entity(immutable: true) {
@@ -72,12 +73,13 @@ type Mint @entity(immutable: true) {
   owner: Bytes! # address
   tickLower: Int! # int24
   tickUpper: Int! # int24
-  amount: BigInt! # uint128
+  liquidity: BigInt! # uint128
   amount0: BigInt! # uint256
   amount1: BigInt! # uint256
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
+  logIndex: BigInt!
 }
 
 type SetFeeProtocol @entity(immutable: true) {
@@ -103,4 +105,5 @@ type Swap @entity(immutable: true) {
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
+  logIndex: BigInt!
 }
