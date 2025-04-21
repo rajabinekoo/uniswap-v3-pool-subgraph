@@ -1,6 +1,7 @@
 type Burn @entity(immutable: true) {
   id: Bytes!
   owner: Bytes! # address
+  origin: Bytes! # address
   tickLower: Int! # int24
   tickUpper: Int! # int24
   liquidity: BigInt! # uint128
@@ -71,6 +72,7 @@ type Mint @entity(immutable: true) {
   id: Bytes!
   sender: Bytes! # address
   owner: Bytes! # address
+  origin: Bytes! # address
   tickLower: Int! # int24
   tickUpper: Int! # int24
   liquidity: BigInt! # uint128
@@ -96,6 +98,7 @@ type SetFeeProtocol @entity(immutable: true) {
 type Swap @entity(immutable: true) {
   id: Bytes!
   sender: Bytes! # address
+  origin: Bytes! # address
   recipient: Bytes! # address
   amount0: BigInt! # int256
   amount1: BigInt! # int256

@@ -31,6 +31,7 @@ export function handleBurn(event: BurnEvent): void {
   entity.liquidity = event.params.amount;
   entity.amount0 = event.params.amount0;
   entity.amount1 = event.params.amount1;
+  entity.origin = event.transaction.from;
 
   entity.logIndex = event.logIndex;
   entity.blockNumber = event.block.number;
@@ -135,6 +136,7 @@ export function handleMint(event: MintEvent): void {
   entity.liquidity = event.params.amount;
   entity.amount0 = event.params.amount0;
   entity.amount1 = event.params.amount1;
+  entity.origin = event.transaction.from;
 
   entity.logIndex = event.logIndex;
   entity.blockNumber = event.block.number;
@@ -171,6 +173,7 @@ export function handleSwap(event: SwapEvent): void {
   entity.sqrtPriceX96 = event.params.sqrtPriceX96;
   entity.liquidity = event.params.liquidity;
   entity.tick = event.params.tick;
+  entity.origin = event.transaction.from;
 
   entity.logIndex = event.logIndex;
   entity.blockNumber = event.block.number;
